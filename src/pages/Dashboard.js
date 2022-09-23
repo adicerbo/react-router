@@ -4,11 +4,13 @@ import React from "react";
 const Dashboard = (props) => {
     let stockData = props.stockData.map((data, index) => {
         return <Link key={index} to={`/stocks/${data.symbol}`}>
-            <li >{data.name}</li>
+            <tr>{data.name}</tr>
+            <tr>{data.lastPrice}</tr>
+            <tr>{data.change}</tr>
         </Link>
     });
     return (
-        <ul>{stockData}</ul>
+        <table>{stockData}</table>
     )
 }
 
